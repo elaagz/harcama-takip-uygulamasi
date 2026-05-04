@@ -1,0 +1,145 @@
+:host {
+  display: block;
+  background: #0f172a;
+}
+
+ion-content {
+  --background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+}
+
+ion-content::part(scroll) {
+  max-width: 430px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+ion-toolbar {
+  --background: linear-gradient(135deg, #2563eb, #38bdf8);
+  --color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+ion-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+ion-card {
+  border-radius: 22px;
+  margin: 18px 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.form-card {
+  margin-top: 24px;
+}
+
+ion-card-content {
+  padding: 20px;
+}
+
+h2 {
+  color: #f8fafc;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 6px 14px 14px;
+}
+
+.form-card h2 {
+  margin: 0 0 18px;
+  color: #e0f2fe;
+}
+
+.small-title {
+  color: #bfdbfe;
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+
+.total-card {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+}
+
+.total-card h1 {
+  color: white;
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.09);
+  --color: #f8fafc;
+  --border-radius: 14px;
+  --padding-start: 14px;
+  --inner-padding-end: 14px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+}
+
+ion-input,
+ion-select {
+  color: #f8fafc;
+}
+
+ion-button {
+  height: 48px;
+  margin-top: 16px;
+  --border-radius: 14px;
+  --background: linear-gradient(135deg, #2563eb, #38bdf8);
+  --box-shadow: 0 8px 18px rgba(56, 189, 248, 0.35);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+ion-list {
+  background: transparent;
+  padding: 0 14px 20px;
+}
+
+ion-item-sliding {
+  margin-bottom: 12px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+ion-list ion-item {
+  --background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 0;
+  min-height: 82px;
+}
+
+ion-label h2 {
+  color: #ffffff;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+ion-label p {
+  color: #cbd5e1;
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+ion-badge {
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+ion-item-option {
+  font-weight: 700;
+}
+
+.empty-text {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 20px;
+}
+

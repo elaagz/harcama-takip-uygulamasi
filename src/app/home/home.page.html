@@ -1,0 +1,111 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Harcama Takip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card>
+    <ion-card-content class="form-card">
+      <h2>Yeni Harcama Ekle</h2>
+
+      <ion-item>
+        <ion-input
+          label="Harcama Adı"
+          labelPlacement="floating"
+          placeholder="Örn: Kahve, kitap, market"
+          [(ngModel)]="harcamaAdi">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          type="number"
+          label="Tutar"
+          labelPlacement="floating"
+          placeholder="Örn: 150"
+          [(ngModel)]="harcamaTutari">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Kategori"
+          labelPlacement="fixed"
+          [(ngModel)]="secilenKategori"
+          okText="Tamam"
+          cancelText="İptal">
+
+          <ion-select-option value="Mutfak/Gıda">🍕 Mutfak / Gıda</ion-select-option>
+          <ion-select-option value="Ulaşım">🚌 Ulaşım</ion-select-option>
+          <ion-select-option value="Eğlence/Sosyal">🎬 Eğlence / Sosyal</ion-select-option>
+          <ion-select-option value="Giyim">👕 Giyim</ion-select-option>
+          <ion-select-option value="Eğitim">📚 Eğitim</ion-select-option>
+          <ion-select-option value="Diğer">📦 Diğer</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+  <ion-label>Tarih</ion-label>
+  <ion-datetime-button datetime="harcamaTarihi"></ion-datetime-button>
+</ion-item>
+
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime
+      id="harcamaTarihi"
+      presentation="date"
+      [(ngModel)]="secilenTarih"
+      doneText="Tamam"
+      cancelText="İptal">
+    </ion-datetime>
+  </ng-template>
+</ion-modal>
+
+      <ion-button expand="block" (click)="harcamaEkle()">
+        Harcama Ekle
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="total-card">
+    <ion-card-content>
+       <p class="small-title">Toplam Harcama</p>
+       <h1>{{ toplamTutar }} TL</h1>
+    </ion-card-content>
+  </ion-card>
+
+  <h2>Kayıtlı Harcamalar</h2>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let harcama of harcamalar; let i = index">
+      <ion-item>
+        <ion-label>
+          <h2>{{ harcama.baslik }}</h2>
+          <p>{{ harcama.kategori }} - {{ harcama.tarih }}</p>
+          <p><strong>{{ harcama.tutar }} TL</strong></p>
+        </ion-label>
+
+        <ion-badge [color]="kategoriRenk(harcama.kategori)">
+          {{ harcama.kategori }}
+        </ion-badge>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="sil(i)">
+          Sil
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-toast
+    [isOpen]="isToastOpen"
+    [message]="toastMessage"
+    [duration]="2000"
+    (didDismiss)="isToastOpen = false">
+  </ion-toast>
+
+</ion-content>
