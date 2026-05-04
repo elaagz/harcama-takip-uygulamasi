@@ -1,5 +1,3 @@
-// TBP4001-Ionic-Harcama-Projesi-2026
-
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
